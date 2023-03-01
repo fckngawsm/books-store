@@ -27,6 +27,20 @@ const HeaderItem = styled.li`
   cursor: pointer;
   letter-spacing: 0.8px;
   text-transform: uppercase;
+  position: relative;
+  &:after{
+    display: block;
+	position: absolute;
+	left: 0;
+	width: 0;
+	height: 1px;
+	background-color: black;
+	content: "";
+	transition: width 0.3s ease-out;
+  }
+  &:hover::after{
+    width: 100%;
+  }
 `;
 
 export default function Header() {
