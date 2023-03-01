@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "../Button/Button";
+
 const SliderInfo = styled.div`
   height: 700px;
-  background-image: url("https://mf.b37mrtl.ru/rbthmedia/images/2021.05/original/609eae6585600a01c42a6017.jpg");
+  background-image: url(${(props) => props.img});
   background-repeat: no-repeat;
   background-size: cover;
+  min-width: 100%;
 `;
 
 const SliderItem = styled.div`
@@ -38,33 +41,15 @@ const SliderDescription = styled.p`
   color: #ffffff;
 `;
 
-const SliderButton = styled.button`
-  width: 222px;
-  line-height: 1.2;
-  border: solid 1px #fff;
-  background-color: transparent;
-  margin-top: 65px;
-  font-size: 10px;
-  text-align: center;
-  color: #fff;
-  text-transform: uppercase;
-  padding: 20px 30px;
-  cursor: pointer;
-  transition: .5s linear;
-  &:hover {
-    background-color: #fff;
-    color:black
-  }
-`;
-export default function Slider() {
+export default function SliderMain({ slide }) {
   return (
-    <SliderInfo>
+    <SliderInfo img={slide.img}>
       <SliderItem>
-        <SliderTitle>Неделя Булгакова</SliderTitle>
-        <SliderDescription>
-          Как Михаил Афанасьевич Булгаков боролся с Советской властью?
-        </SliderDescription>
-        <SliderButton>Подробнее</SliderButton>
+        <SliderTitle>{slide.title}</SliderTitle>
+        <SliderDescription>{slide.description}</SliderDescription>
+        <Button bg={"white"} color={"black"}>
+          Подробнее
+        </Button>
       </SliderItem>
     </SliderInfo>
   );

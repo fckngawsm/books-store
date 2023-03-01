@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Slider from "../Slider/Slider";
+import SliderMain from "../Slider/Slider";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import '../Header/header.css'
+import Slider from "react-slick";
+
 const HeaderWraper = styled.header`
   display: flex;
   padding: 20px 30px;
@@ -28,22 +33,30 @@ const HeaderItem = styled.li`
   letter-spacing: 0.8px;
   text-transform: uppercase;
   position: relative;
-  &:after{
+  &:after {
     display: block;
-	position: absolute;
-	left: 0;
-	width: 0;
-	height: 1px;
-	background-color: black;
-	content: "";
-	transition: width 0.3s ease-out;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: black;
+    content: "";
+    transition: width 0.3s ease-out;
   }
-  &:hover::after{
+  &:hover::after {
     width: 100%;
   }
 `;
 
-export default function Header() {
+export default function Header({ slides }) {
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 0,
+  };
   return (
     <>
       <HeaderWraper>
@@ -56,7 +69,16 @@ export default function Header() {
           <HeaderItem>О нас</HeaderItem>
         </HeaderNavigation>
       </HeaderWraper>
-      <Slider />
+      <Slider {...settings}>
+        {slides.map((slide) => (
+          <SliderMain
+            slide={slide}
+            title={slide.title}
+            description={slide.description}
+            img={slide.img}
+          />
+        ))}
+      </Slider>
     </>
   );
 }
