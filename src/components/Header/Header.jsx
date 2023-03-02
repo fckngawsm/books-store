@@ -3,12 +3,12 @@ import styled from "styled-components";
 import SliderMain from "../SliderMain/SliderMain";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import '../Header/header.css'
+import "../Header/header.css";
 import Slider from "react-slick";
 
 const HeaderWraper = styled.header`
   display: flex;
-  padding: 20px 30px;
+  padding: 20px 0 20px 50px;
   justify-content: space-between;
   align-items: center;
 `;
@@ -52,7 +52,6 @@ export default function Header({ slides }) {
   const settings = {
     dots: true,
     infinite: true,
-    // speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,

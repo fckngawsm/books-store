@@ -1,9 +1,13 @@
 .slick-prev {
-    width: 100px;
+    width: 120px;
     z-index: 1;
 }
 
 .slick-next {
-    width: 100px;
+    width: 75px;
     z-index: 1;
+}
+
+.slick-slider {
+    margin-left: 50px;
 }

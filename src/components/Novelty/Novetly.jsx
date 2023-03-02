@@ -3,10 +3,12 @@ import styled from "styled-components";
 import book from "../../images/book.png";
 import like from "../../images/like.svg";
 import cart from "../../images/cart.svg";
+import Button from "../Button/Button";
 const Section = styled.section`
   margin: 90px auto;
   width: 1440px;
 `;
+
 const Title = styled.h2`
   text-align: center;
   text-transform: uppercase;
@@ -17,11 +19,13 @@ const Title = styled.h2`
   font-weight: 400;
   margin: 0 0 90px 0;
 `;
+
 const SectionItems = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 `;
+
 const Wraper = styled.div`
   width: 353px;
   height: 500px;
@@ -32,29 +36,34 @@ const Wraper = styled.div`
   justify-content: center;
   flex-direction: column;
 `;
+
 const NovetlyTitle = styled.h2`
   background-color: black;
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 12px;
+  font-size: 11px;
   margin: 0;
   padding: 3px 9px;
   color: white;
   width: 70px;
   font-weight: 400;
   line-height: 20px;
+  text-transform: uppercase;
 `;
+
 const BookImage = styled.img`
   width: 230px;
   height: 270px;
 `;
+
 const NovetlyInfromation = styled.div`
   display: flex;
   flex-direction: column;
   align-self: flex-start;
   margin-left: 55px;
 `;
+
 const NovetlyGenre = styled.h3`
   cursor: pointer;
   color: #878787;
@@ -64,12 +73,14 @@ const NovetlyGenre = styled.h3`
   text-transform: uppercase;
   line-height: 1.2;
 `;
+
 const NovetlyName = styled.h4`
   font-size: 16px;
   height: auto;
   overflow: hidden;
   margin: 0;
 `;
+
 const NovetlyAuthor = styled.h5`
   margin: 0;
   margin-top: 10px;
@@ -96,17 +107,20 @@ const NovetlyPrice = styled.p`
   color: #000000;
   font-weight: 600;
 `;
+
 const NovetlyFavourite = styled.img`
   width: 23px;
   height: 23px;
   cursor: pointer;
   margin-right: 15px;
 `;
+
 const NovetlyCart = styled.img`
   width: 23px;
   height: 23px;
   cursor: pointer;
 `;
+
 function Novetly() {
   return (
     <Section>
@@ -177,6 +191,14 @@ function Novetly() {
           </NovetlyInfromation>
         </Wraper>
       </SectionItems>
+      <Button
+        border={"black"}
+        color={"black"}
+        bgHover={"black"}
+        colorHover={"white"}
+      >
+        Смотреть все
+      </Button>
     </Section>
   );
 }

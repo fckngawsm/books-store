@@ -49,8 +49,13 @@ export default function SliderMain({ slide }) {
       <SliderItem>
         <SliderTitle>{slide.title}</SliderTitle>
         <SliderDescription>{slide.description}</SliderDescription>
-        <Button bg={"white"} color={"black"}>
-          Подробнее
+        <Button
+          border={"white"}
+          color={"white"}
+          bgHover={"white"}
+          colorHover={"black"}
+        >
+          Смотреть все
         </Button>
       </SliderItem>
     </SliderInfo>
