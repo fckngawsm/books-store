@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SliderMain from "../Slider/Slider";
+import SliderMain from "../SliderMain/SliderMain";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../Header/header.css'
@@ -51,11 +51,14 @@ const HeaderItem = styled.li`
 export default function Header({ slides }) {
   const settings = {
     dots: true,
-    infinite: false,
-    speed: 500,
+    infinite: true,
+    // speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
   };
   return (
     <>

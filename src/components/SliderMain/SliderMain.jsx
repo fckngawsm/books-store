@@ -4,8 +4,10 @@ import Button from "../Button/Button";
 
 const SliderInfo = styled.div`
   height: 700px;
+  max-height: 700px auto;
   background-image: url(${(props) => props.img});
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   min-width: 100%;
 `;
@@ -19,7 +21,7 @@ const SliderItem = styled.div`
   margin: 0 auto;
   height: 100%;
   overflow: hidden;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
 `;
 
 const SliderTitle = styled.h2`
