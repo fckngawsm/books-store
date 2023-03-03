@@ -52,11 +52,11 @@ export default function Header() {
       <HeaderWraper>
         <Title>ТОТ</Title>
         <HeaderNavigation>
-          <HeaderItem>Книги</HeaderItem>
-          <HeaderItem>Авторы</HeaderItem>
-          <HeaderItem>Журналы</HeaderItem>
-          <HeaderItem>Новости</HeaderItem>
-          <HeaderItem>О нас</HeaderItem>
+          <HeaderItem>Books</HeaderItem>
+          <HeaderItem>Authors</HeaderItem>
+          <HeaderItem>Magazines</HeaderItem>
+          <HeaderItem>News</HeaderItem>
+          <HeaderItem>About us</HeaderItem>
         </HeaderNavigation>
       </HeaderWraper>
     </>
