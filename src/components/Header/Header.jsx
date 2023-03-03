@@ -8,7 +8,7 @@ import Slider from "react-slick";
 
 const HeaderWraper = styled.header`
   display: flex;
-  padding: 20px 0 20px 50px;
+  padding: 20px 50px;
   justify-content: space-between;
   align-items: center;
 `;
