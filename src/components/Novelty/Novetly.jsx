@@ -124,17 +124,17 @@ const NovetlyCart = styled.img`
 function Novetly() {
   return (
     <Section>
-      <Title>Новинки</Title>
+      <Title>NEW</Title>
       <SectionItems>
         <Wraper>
-          <NovetlyTitle>Новинки</NovetlyTitle>
+          <NovetlyTitle>NEW</NovetlyTitle>
           <BookImage src={`${book}`} alt="" />
           <NovetlyInfromation>
-            <NovetlyGenre>Художественная литература</NovetlyGenre>
-            <NovetlyName>Кровавая любовь</NovetlyName>
-            <NovetlyAuthor>Пушкин</NovetlyAuthor>
+            <NovetlyGenre>fiction</NovetlyGenre>
+            <NovetlyName>bloody love</NovetlyName>
+            <NovetlyAuthor>Mordashev</NovetlyAuthor>
             <NovetlyPurchase>
-              <NovetlyPrice>600 руб</NovetlyPrice>
+              <NovetlyPrice>20$</NovetlyPrice>
               <div>
                 <NovetlyFavourite src={`${like}`} />
                 <NovetlyCart src={`${cart}`} />
@@ -143,14 +143,14 @@ function Novetly() {
           </NovetlyInfromation>
         </Wraper>
         <Wraper>
-          <NovetlyTitle>Новинки</NovetlyTitle>
+          <NovetlyTitle>NEW</NovetlyTitle>
           <BookImage src={`${book}`} alt="" />
           <NovetlyInfromation>
-            <NovetlyGenre>Художественная литература</NovetlyGenre>
-            <NovetlyName>Кровавая любовь</NovetlyName>
-            <NovetlyAuthor>Пушкин</NovetlyAuthor>
+            <NovetlyGenre>fiction</NovetlyGenre>
+            <NovetlyName>bloody love</NovetlyName>
+            <NovetlyAuthor>Mordashev</NovetlyAuthor>
             <NovetlyPurchase>
-              <NovetlyPrice>600 руб</NovetlyPrice>
+              <NovetlyPrice>20$</NovetlyPrice>
               <div>
                 <NovetlyFavourite src={`${like}`} />
                 <NovetlyCart src={`${cart}`} />
@@ -159,14 +159,14 @@ function Novetly() {
           </NovetlyInfromation>
         </Wraper>
         <Wraper>
-          <NovetlyTitle>Новинки</NovetlyTitle>
+          <NovetlyTitle>NEW</NovetlyTitle>
           <BookImage src={`${book}`} alt="" />
           <NovetlyInfromation>
-            <NovetlyGenre>Художественная литература</NovetlyGenre>
-            <NovetlyName>Кровавая любовь</NovetlyName>
-            <NovetlyAuthor>Пушкин</NovetlyAuthor>
+            <NovetlyGenre>fiction</NovetlyGenre>
+            <NovetlyName>bloody love</NovetlyName>
+            <NovetlyAuthor>Mordashev</NovetlyAuthor>
             <NovetlyPurchase>
-              <NovetlyPrice>600 руб</NovetlyPrice>
+              <NovetlyPrice>20$</NovetlyPrice>
               <div>
                 <NovetlyFavourite src={`${like}`} />
                 <NovetlyCart src={`${cart}`} />
@@ -175,14 +175,14 @@ function Novetly() {
           </NovetlyInfromation>
         </Wraper>
         <Wraper>
-          <NovetlyTitle>Новинки</NovetlyTitle>
+          <NovetlyTitle>NEW</NovetlyTitle>
           <BookImage src={`${book}`} alt="" />
           <NovetlyInfromation>
-            <NovetlyGenre>Художественная литература</NovetlyGenre>
-            <NovetlyName>Кровавая любовь</NovetlyName>
-            <NovetlyAuthor>Пушкин</NovetlyAuthor>
+            <NovetlyGenre>fiction</NovetlyGenre>
+            <NovetlyName>bloody love</NovetlyName>
+            <NovetlyAuthor>Mordashev</NovetlyAuthor>
             <NovetlyPurchase>
-              <NovetlyPrice>600 руб</NovetlyPrice>
+              <NovetlyPrice>20$</NovetlyPrice>
               <div>
                 <NovetlyFavourite src={`${like}`} />
                 <NovetlyCart src={`${cart}`} />

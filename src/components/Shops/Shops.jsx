@@ -86,7 +86,7 @@ const ShopPhone = styled.h5`
 function Shops() {
   return (
     <Section>
-      <Title>Магазины по всему миру</Title>
+      <Title>STORES ALL OVER THE WORLD</Title>
       <SectionItems>
         <Wraper>
           <ShopTitle>livraria lello</ShopTitle>

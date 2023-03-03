@@ -1,15 +1,13 @@
 import React from "react";
 import Header from "../Header/Header";
-import Novetly from "../Novelty/Novetly";
 import { slides } from "../../utils/slides";
-import Shops from "../Shops/Shops";
+import Main from "../Main/Main";
 function App() {
   return (
     <div className="App">
       <div className="page">
-        <Header slides={slides} />
-        <Novetly />
-        <Shops />
+        <Header />
+        <Main slides={slides} />
       </div>
     </div>
   );

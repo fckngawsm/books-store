@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import SliderMain from "../SliderMain/SliderMain";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Header/header.css";
-import Slider from "react-slick";
 
 const HeaderWraper = styled.header`
   display: flex;
@@ -48,17 +46,7 @@ const HeaderItem = styled.li`
   }
 `;
 
-export default function Header({ slides }) {
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-  };
+export default function Header() {
   return (
     <>
       <HeaderWraper>
@@ -71,16 +59,6 @@ export default function Header({ slides }) {
           <HeaderItem>О нас</HeaderItem>
         </HeaderNavigation>
       </HeaderWraper>
-      <Slider {...settings}>
-        {slides.map((slide) => (
-          <SliderMain
-            slide={slide}
-            title={slide.title}
-            description={slide.description}
-            img={slide.img}
-          />
-        ))}
-      </Slider>
     </>
   );
 }
