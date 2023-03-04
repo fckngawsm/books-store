@@ -24,6 +24,7 @@ const CardInfromation = styled.div`
   flex-direction: column;
   align-self: flex-start;
   margin-left: 55px;
+  margin-top: 15px;
 `;
 
 const CardGenre = styled.h3`
@@ -31,7 +32,6 @@ const CardGenre = styled.h3`
   color: #878787;
   text-decoration: underline;
   font-size: 10px;
-  margin-top: 15px;
   text-transform: uppercase;
   line-height: 1.2;
 `;

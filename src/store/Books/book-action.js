@@ -16,12 +16,12 @@ export const setError = (err) => ({
 export const LoadingBooks =
   () =>
   (dispatch, _, { api, client }) => {
-    dispatch(setLoading);
+    dispatch(setLoading());
     client
       .get(api.ALL_BOOKS)
       .then(({ data }) => {
         console.log(data)
         dispatch(setBooks(data))
     })
-      .catch((err) => dispatch(setError(err)));
+      .catch((err) => dispatch(setError(err.message)));
   };

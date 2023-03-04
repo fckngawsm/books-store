@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "../components/Card/Card";
-import { selectAllBooks } from "../store/Books/book-selectors";
+import { selectAllBooks, selectInfoBook } from "../store/Books/book-selectors";
 import { LoadingBooks } from "../store/Books/book-action";
 
 const SectionBook = styled.section`
@@ -60,12 +60,12 @@ const BookList = styled.div`
 
 function Books() {
   const dispatch = useDispatch();
+  const { error, length, status } = useSelector(selectInfoBook);
   const books = useSelector(selectAllBooks);
   useEffect(() => {
-    dispatch(LoadingBooks());
-  }, [dispatch]);
+    if (!length) dispatch(LoadingBooks());
+  }, [dispatch, length]);
 
-  console.log(books);
   return (
     <SectionBook>
       <BookNavigation>
@@ -90,19 +90,23 @@ function Books() {
         <BookItems>A voluminous book </BookItems>
         <BookItems>Short book</BookItems>
       </BookNavigation>
-      <BookList>
-        {books.map((book) => {
-          return (
-            <Card
-              img={book.image_url}
-              key={book.id}
-              genre={book.genre}
-              title={book.title}
-              authors={book.authors}
-            />
-          );
-        })}
-      </BookList>
+      {error && <h2>Can't fetch data</h2>}
+      {status === "loading" && <h2>Loading...</h2>}
+      {status === "completed" && (
+        <BookList>
+          {books.map((book) => {
+            return (
+              <Card
+                img={book.image_url}
+                key={book.id}
+                genre={book.genres}
+                title={book.title}
+                authors={book.authors}
+              />
+            );
+          })}
+        </BookList>
+      )}
     </SectionBook>
   );
 }

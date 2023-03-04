@@ -9,13 +9,25 @@ const initialState = {
 export const booksReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case SET_BOOKS: {
-      return { ...state, status: "completed", list: payload };
+      return {
+        ...state,
+        status: "completed",
+        list: payload,
+      };
     }
     case SET_LOADING: {
-      return { ...state, status: "loading", error: "null" };
+      return {
+        ...state,
+        status: "loading",
+        error: null,
+      };
     }
     case SET_ERROR: {
-      return { ...state, status: "rejected", error: payload };
+      return {
+        ...state,
+        status: "rejected",
+        error: payload,
+      };
     }
     default: {
       return state;
