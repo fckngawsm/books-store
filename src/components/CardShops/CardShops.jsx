@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import like from "../../images/like.svg";
-import cart from "../../images/cart.svg";
 
 const Wraper = styled.div`
   width: 353px;
@@ -26,7 +24,7 @@ const CardInfromation = styled.div`
   margin-left: 55px;
 `;
 
-const CardGenre = styled.h3`
+const CardSite = styled.a`
   cursor: pointer;
   color: #878787;
   text-decoration: underline;
@@ -34,16 +32,18 @@ const CardGenre = styled.h3`
   margin-top: 15px;
   text-transform: uppercase;
   line-height: 1.2;
+  margin-bottom: 10px;
 `;
 
-const CardName = styled.h4`
+const CardName = styled.h2`
   font-size: 16px;
   height: auto;
   overflow: hidden;
   margin: 0;
+  text-transform: uppercase;
 `;
 
-const CardAuthor = styled.h5`
+const CardAdress = styled.h3`
   margin: 0;
   margin-top: 10px;
   cursor: pointer;
@@ -54,14 +54,7 @@ const CardAuthor = styled.h5`
   line-height: 1.2;
 `;
 
-const CardPurchase = styled.div`
-  margin-top: 20px;
-  width: 230px;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const CardPrice = styled.p`
+const CardPhone = styled.p`
   margin: 0;
   font-size: 14px;
   line-height: normal;
@@ -70,37 +63,18 @@ const CardPrice = styled.p`
   font-weight: 600;
 `;
 
-const CardFavourite = styled.img`
-  width: 23px;
-  height: 23px;
-  cursor: pointer;
-  margin-right: 15px;
-`;
-
-const CardCart = styled.img`
-  width: 23px;
-  height: 23px;
-  cursor: pointer;
-`;
-
-function Card({ genre, title, authors , price}) {
+function CardShops({ title, adresss, site, phone, img }) {
   return (
     <Wraper>
-      <CardImage alt="book" />
+      <CardImage src={img} alt="shops" />
       <CardInfromation>
-        <CardGenre>{genre}</CardGenre>
         <CardName>{title}</CardName>
-        <CardAuthor>{authors}</CardAuthor>
-        <CardPurchase>
-          <CardPrice>20$</CardPrice>
-          <div>
-            <CardFavourite src={`${like}`} />
-            <CardCart src={`${cart}`} />
-          </div>
-        </CardPurchase>
+        <CardAdress>{adresss}</CardAdress>
+        <CardSite href={site}>WebSite</CardSite>
+        <CardPhone>{phone}</CardPhone>
       </CardInfromation>
     </Wraper>
   );
 }
 
-export default Card;
+export default CardShops;

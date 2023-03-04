@@ -12,6 +12,7 @@ function Novetly() {
         <Card title={"title"} genre="genre" authors="authors" />
         <Card title={"title"} genre="genre" authors="authors" />
         <Card title={"title"} genre="genre" authors="authors" />
+        <Card title={"title"} genre="genre" authors="authors" />
       </List>
       <Button
         border={"black"}
