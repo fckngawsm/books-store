@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,18 +11,20 @@ const HeaderWraper = styled.header`
   justify-content: space-between;
   align-items: center;
 `;
-const Title = styled.h1`
+const Title = styled(Link)`
   margin: 0;
   font-size: 30px;
   line-height: 1.2;
   cursor: pointer;
+  color: black;
+  text-decoration: none;
 `;
 const HeaderNavigation = styled.div`
   width: 500px;
   display: flex;
   justify-content: space-between;
 `;
-const HeaderItem = styled.li`
+const HeaderItem = styled(Link)`
   font-weight: 500;
   padding: 0;
   font-size: 14px;
@@ -30,6 +33,8 @@ const HeaderItem = styled.li`
   cursor: pointer;
   letter-spacing: 0.8px;
   text-transform: uppercase;
+  color: black;
+  text-decoration: none;
   position: relative;
   &:after {
     display: block;
@@ -50,13 +55,13 @@ export default function Header() {
   return (
     <>
       <HeaderWraper>
-        <Title>ТОТ</Title>
+        <Title to="/">ТОТ</Title>
         <HeaderNavigation>
-          <HeaderItem>Books</HeaderItem>
-          <HeaderItem>Authors</HeaderItem>
-          <HeaderItem>Magazines</HeaderItem>
-          <HeaderItem>News</HeaderItem>
-          <HeaderItem>About us</HeaderItem>
+          <HeaderItem to="/books">Books</HeaderItem>
+          <HeaderItem to="/authors">Authors</HeaderItem>
+          <HeaderItem to="/magazine">Magazines</HeaderItem>
+          <HeaderItem to="/news">News</HeaderItem>
+          <HeaderItem to="/about">About us</HeaderItem>
         </HeaderNavigation>
       </HeaderWraper>
     </>
