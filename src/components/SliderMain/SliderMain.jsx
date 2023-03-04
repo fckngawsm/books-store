@@ -55,7 +55,7 @@ export default function SliderMain({ slide }) {
           bgHover={"white"}
           colorHover={"black"}
         >
-          Смотреть все
+          View all
         </Button>
       </SliderItem>
     </SliderInfo>

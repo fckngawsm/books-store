@@ -20,7 +20,7 @@ function Novetly() {
         bgHover={"black"}
         colorHover={"white"}
       >
-        Смотреть все
+        View all
       </Button>
     </>
   );

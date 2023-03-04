@@ -83,10 +83,10 @@ const CardCart = styled.img`
   cursor: pointer;
 `;
 
-function Card({ genre, title, authors , price}) {
+function Card({ genre, title, authors, img }) {
   return (
     <Wraper>
-      <CardImage alt="book" />
+      <CardImage src={img} alt="book" />
       <CardInfromation>
         <CardGenre>{genre}</CardGenre>
         <CardName>{title}</CardName>

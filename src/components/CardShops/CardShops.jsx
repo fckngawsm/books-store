@@ -39,7 +39,7 @@ const CardName = styled.h2`
   font-size: 16px;
   height: auto;
   overflow: hidden;
-  margin: 0;
+  margin: 10px 0 0 0;
   text-transform: uppercase;
 `;
 

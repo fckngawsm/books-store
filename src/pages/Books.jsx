@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Card from "../components/Card/Card";
+import { selectAllBooks } from "../store/Books/book-selectors";
+import { LoadingBooks } from "../store/Books/book-action";
+
 const SectionBook = styled.section`
   margin: 40px 50px 0;
   width: 100%;
@@ -35,9 +40,32 @@ const BookItems = styled.li`
 `;
 
 const BookList = styled.div`
-  margin-left: 100px;
+  width: 100%;
+  padding: 0 50px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  @media (min-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 50px;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 353px);
+    gap: 10px;
+    width: 1412px;
+    margin: 0 auto;
+  }
 `;
+
 function Books() {
+  const dispatch = useDispatch();
+  const books = useSelector(selectAllBooks);
+  useEffect(() => {
+    dispatch(LoadingBooks());
+  }, [dispatch]);
+
+  console.log(books);
   return (
     <SectionBook>
       <BookNavigation>
@@ -63,7 +91,17 @@ function Books() {
         <BookItems>Short book</BookItems>
       </BookNavigation>
       <BookList>
-        <Card />
+        {books.map((book) => {
+          return (
+            <Card
+              img={book.image_url}
+              key={book.id}
+              genre={book.genre}
+              title={book.title}
+              authors={book.authors}
+            />
+          );
+        })}
       </BookList>
     </SectionBook>
   );

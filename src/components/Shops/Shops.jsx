@@ -18,17 +18,17 @@ function Shops() {
         />
         <CardShops
           title="Cărturești Carusel"
-          site="https://lh3.googleusercontent.com/p/AF1QipNW0J-NaA4rpLPeWE9zUfDY84TEfx82aJwp-xQE=s680-w680-h510"
+          site="http://carturesticarusel.ro/"
           adresss="Strada Lipscani 55, București 030033, Romania"
           phone="+40 728 828 922"
           img="https://lh3.googleusercontent.com/p/AF1QipNW0J-NaA4rpLPeWE9zUfDY84TEfx82aJwp-xQE=s680-w680-h510"
         />
         <CardShops
           title="Polare"
-          site="https://www.azureazure.com/wp-content/uploads/2013/08/Polare-Maastricht.jpg"
-          adresss="Binnenstad Dominicanerkerkstraat 1 6211 CP Maastricht"
+          site="https://libris.nl/dominicanen"
+          adresss="Binnenstad Dominicanerkerkstraat 1 6211"
           phone="(+31) 043 410 00 10"
-          img='"https://www.azureazure.com/wp-content/uploads/2013/08/Polare-Maastricht.jpg"'
+          img="https://www.azureazure.com/wp-content/uploads/2013/08/Polare-Maastricht.jpg"
         />
         <CardShops
           title="Librairie Avant-Garde"
@@ -44,7 +44,7 @@ function Shops() {
         bgHover={"black"}
         colorHover={"white"}
       >
-        Смотреть все
+        View all
       </Button>
     </>
   );
