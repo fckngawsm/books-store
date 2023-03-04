@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import { slides } from "../../utils/slides";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import Books from "../Books/Books";
+import Books from "../../pages/Books";
 function App() {
   return (
     <div className="App">

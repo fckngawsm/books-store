@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Card from "../components/Card/Card";
 const SectionBook = styled.section`
   margin: 40px 50px 0;
   width: 100%;
@@ -33,6 +34,9 @@ const BookItems = styled.li`
   cursor: pointer;
 `;
 
+const BookList = styled.div`
+  margin-left: 100px;
+`;
 function Books() {
   return (
     <SectionBook>
@@ -58,6 +62,9 @@ function Books() {
         <BookItems>A voluminous book </BookItems>
         <BookItems>Short book</BookItems>
       </BookNavigation>
+      <BookList>
+        <Card />
+      </BookList>
     </SectionBook>
   );
 }
