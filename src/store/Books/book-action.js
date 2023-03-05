@@ -20,8 +20,8 @@ export const LoadingBooks =
     client
       .get(api.ALL_BOOKS)
       .then(({ data }) => {
-        console.log(data)
-        dispatch(setBooks(data))
-    })
+        console.log(data);
+        dispatch(setBooks(data));
+      })
       .catch((err) => dispatch(setError(err.message)));
   };
