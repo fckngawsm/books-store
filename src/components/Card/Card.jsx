@@ -83,7 +83,7 @@ const CardCart = styled.img`
   cursor: pointer;
 `;
 
-function Card({ genre, title, authors, img }) {
+function Card({ genre, title, authors, img , format}) {
   return (
     <Wraper>
       <CardImage src={img} alt="book" />

@@ -3,8 +3,15 @@ import styled from "styled-components";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "../components/Card/Card";
-import { selectAllBooks, selectInfoBook } from "../store/books/book-selectors";
+import {
+  selectInfoBook,
+  selectVisibleBooksByFormat,
+} from "../store/books/book-selectors";
 import { LoadingBooks } from "../store/books/book-action";
+import { selectFilter } from "../store/filter/filter-selectors";
+import { format, genres, volume } from "../utils/categories";
+import { addFilter } from "../store/filter/filter-action";
+import { FilterPanel } from "../components/FilterPanel/FilterPanel";
 
 const SectionBook = styled.section`
   margin: 40px 50px 0;
@@ -55,57 +62,76 @@ const BookList = styled.div`
     gap: 10px;
     width: 1412px;
     margin: 0 auto;
+    margin-top: 20px;
   }
+`;
+
+const WraperWithFilter = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 function Books() {
   const dispatch = useDispatch();
   const { error, length, status } = useSelector(selectInfoBook);
-  const books = useSelector(selectAllBooks);
+  const filter = useSelector(selectFilter);
+  const books = useSelector((state) =>
+    selectVisibleBooksByFormat(state, filter)
+  );
   useEffect(() => {
     if (!length) dispatch(LoadingBooks());
   }, [dispatch, length]);
-
+  const handleAddFilter = (filter) => {
+    dispatch(addFilter(filter));
+  };
   return (
     <SectionBook>
       <BookNavigation>
         <BookNavTitle>categories</BookNavTitle>
         <BookTitle>Format:</BookTitle>
-        <BookItems>Paperback</BookItems>
-        <BookItems>Hardcover</BookItems>
+        {format.map((item, index) => {
+          return (
+            <BookItems onClick={() => handleAddFilter(item)} key={index}>
+              {item}
+            </BookItems>
+          );
+        })}
         <BookTitle>Genre:</BookTitle>
-        <BookItems>Young Adult</BookItems>
-        <BookItems>Fiction</BookItems>
-        <BookItems>Science Fiction</BookItems>
-        <BookItems>Dystopia</BookItems>
-        <BookItems>Fantasy</BookItems>
-        <BookItems>Classics</BookItems>
-        <BookItems>Academic</BookItems>
-        <BookItems>School</BookItems>
-        <BookItems>Romance</BookItems>
-        <BookItems>Historical</BookItems>
-        <BookItems>Humor</BookItems>
-        <BookItems>Thriller</BookItems>
+        {genres.map((item, index) => {
+          return (
+            <BookItems onClick={handleAddFilter} key={index}>
+              {item}
+            </BookItems>
+          );
+        })}
         <BookTitle>The volume of the book:</BookTitle>
-        <BookItems>A voluminous book </BookItems>
-        <BookItems>Short book</BookItems>
+        {volume.map((item, index) => {
+          return (
+            <BookItems onClick={handleAddFilter} key={index}>
+              {item}
+            </BookItems>
+          );
+        })}
       </BookNavigation>
       {error && <h2>Can't fetch data</h2>}
       {status === "loading" && <h2>Loading...</h2>}
       {status === "completed" && (
-        <BookList>
-          {books.map((book) => {
-            return (
-              <Card
-                img={book.image_url}
-                key={book.id}
-                genre={book.genres}
-                title={book.title}
-                authors={book.authors}
-              />
-            );
-          })}
-        </BookList>
+        <WraperWithFilter>
+          {filter.length > 0 ? <FilterPanel /> : null}
+          <BookList>
+            {books.map((book) => {
+              return (
+                <Card
+                  img={book.image_url}
+                  key={book.id}
+                  genre={book.genres}
+                  title={book.title}
+                  authors={book.authors}
+                />
+              );
+            })}
+          </BookList>
+        </WraperWithFilter>
       )}
     </SectionBook>
   );
