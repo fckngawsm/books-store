@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Card from "../components/Card/Card";
 import {
   selectInfoBook,
-  selectVisibleBooksByFormat,
+  selectVisibleBooks,
 } from "../store/books/book-selectors";
 import { LoadingBooks } from "../store/books/book-action";
 import { selectFilter } from "../store/filter/filter-selectors";
@@ -75,9 +75,8 @@ function Books() {
   const dispatch = useDispatch();
   const { error, length, status } = useSelector(selectInfoBook);
   const filter = useSelector(selectFilter);
-  const books = useSelector((state) =>
-    selectVisibleBooksByFormat(state, filter)
-  );
+  console.log(filter);
+  const books = useSelector((state) => selectVisibleBooks(state, filter));
   useEffect(() => {
     if (!length) dispatch(LoadingBooks());
   }, [dispatch, length]);
@@ -99,7 +98,7 @@ function Books() {
         <BookTitle>Genre:</BookTitle>
         {genres.map((item, index) => {
           return (
-            <BookItems onClick={handleAddFilter} key={index}>
+            <BookItems onClick={() => handleAddFilter(item)} key={index}>
               {item}
             </BookItems>
           );
@@ -107,7 +106,7 @@ function Books() {
         <BookTitle>The volume of the book:</BookTitle>
         {volume.map((item, index) => {
           return (
-            <BookItems onClick={handleAddFilter} key={index}>
+            <BookItems onClick={() => handleAddFilter(item)} key={index}>
               {item}
             </BookItems>
           );

@@ -68,7 +68,7 @@ function CardShops({ title, adresss, site, phone, img }) {
     <Wraper>
       <CardImage src={img} alt="shops" />
       <CardInfromation>
-        <CardName>{title}</CardName>
+        <CardName >{title}</CardName>
         <CardAdress>{adresss}</CardAdress>
         <CardSite href={site}>WebSite</CardSite>
         <CardPhone>{phone}</CardPhone>

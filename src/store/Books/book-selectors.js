@@ -5,9 +5,15 @@ export const selectInfoBook = (state) => ({
 });
 export const selectAllBooks = (state) => state.books.list;
 
-export const selectVisibleBooksByFormat = (state, filters = []) => {
+export const selectVisibleBooks = (state, filters = []) => {
   if (filters.length === 0) return state.books.list;
   return state.books.list.filter((book) => {
-    return book.format.includes(filters);
+    const bookFilter = [].concat(
+      book.format,
+      ...book.genres.split(", "),
+      book.author
+    );
+    console.log(bookFilter);
+    return filters.every((filter) => bookFilter.includes(filter));
   });
 };

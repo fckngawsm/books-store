@@ -17,9 +17,11 @@ const FilterPanel = () => {
   const dispatch = useDispatch();
   return (
     <Wraper>
-      {activeFilter.map((filter) => {
+      {activeFilter.map((filter, index) => {
         return (
-          <Badge onClick={() => dispatch(removeFilter(filter))}>{filter}</Badge>
+          <Badge key={index} onClick={() => dispatch(removeFilter(filter))}>
+            {filter}
+          </Badge>
         );
       })}
       <Clear onClear={() => dispatch(clearFilter())} />
