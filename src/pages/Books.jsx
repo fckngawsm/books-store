@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "../components/Card/Card";
-import { selectAllBooks, selectInfoBook } from "../store/Books/book-selectors";
-import { LoadingBooks } from "../store/Books/book-action";
+import { selectAllBooks, selectInfoBook } from "../store/books/book-selectors";
+import { LoadingBooks } from "../store/books/book-action";
 
 const SectionBook = styled.section`
   margin: 40px 50px 0;
