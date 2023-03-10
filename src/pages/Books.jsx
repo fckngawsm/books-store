@@ -9,7 +9,7 @@ import {
 } from "../store/books/book-selectors";
 import { LoadingBooks } from "../store/books/book-action";
 import { selectFilter } from "../store/filter/filter-selectors";
-import { format, genres, volume } from "../utils/categories";
+import { format, genres } from "../utils/categories";
 import { addFilter } from "../store/filter/filter-action";
 import { FilterPanel } from "../components/FilterPanel/FilterPanel";
 
@@ -75,7 +75,6 @@ function Books() {
   const dispatch = useDispatch();
   const { error, length, status } = useSelector(selectInfoBook);
   const filter = useSelector(selectFilter);
-  console.log(filter);
   const books = useSelector((state) => selectVisibleBooks(state, filter));
   useEffect(() => {
     if (!length) dispatch(LoadingBooks());
@@ -97,14 +96,6 @@ function Books() {
         })}
         <BookTitle>Genre:</BookTitle>
         {genres.map((item, index) => {
-          return (
-            <BookItems onClick={() => handleAddFilter(item)} key={index}>
-              {item}
-            </BookItems>
-          );
-        })}
-        <BookTitle>The volume of the book:</BookTitle>
-        {volume.map((item, index) => {
           return (
             <BookItems onClick={() => handleAddFilter(item)} key={index}>
               {item}

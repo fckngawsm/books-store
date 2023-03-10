@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+
 const Wraper = styled.div`
   width: 353px;
   height: 500px;
@@ -68,7 +69,7 @@ function CardShops({ title, adresss, site, phone, img }) {
     <Wraper>
       <CardImage src={img} alt="shops" />
       <CardInfromation>
-        <CardName >{title}</CardName>
+        <CardName>{title}</CardName>
         <CardAdress>{adresss}</CardAdress>
         <CardSite href={site}>WebSite</CardSite>
         <CardPhone>{phone}</CardPhone>

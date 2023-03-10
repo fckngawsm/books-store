@@ -3,7 +3,7 @@ export const selectInfoBook = (state) => ({
   error: state.books.error,
   length: state.books.list.length,
 });
-export const selectAllBooks = (state) => state.books.list;
+// export const selectAllBooks = (state) => state.books.list;
 
 export const selectVisibleBooks = (state, filters = []) => {
   if (filters.length === 0) return state.books.list;
@@ -11,9 +11,8 @@ export const selectVisibleBooks = (state, filters = []) => {
     const bookFilter = [].concat(
       book.format,
       ...book.genres.split(", "),
-      book.author
+      book.authors
     );
-    console.log(bookFilter);
     return filters.every((filter) => bookFilter.includes(filter));
   });
 };

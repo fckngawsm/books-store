@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import like from "../../images/like.svg";
 import cart from "../../images/cart.svg";
+import { useDispatch } from "react-redux";
+import { addFilter } from "../../store/filter/filter-action";
 
 const Wraper = styled.div`
   width: 353px;
@@ -28,7 +30,6 @@ const CardInfromation = styled.div`
 `;
 
 const CardGenre = styled.h3`
-  cursor: pointer;
   color: #878787;
   text-decoration: underline;
   font-size: 10px;
@@ -84,13 +85,19 @@ const CardCart = styled.img`
 `;
 
 function Card({ genre, title, authors, img }) {
+  const dispatch = useDispatch();
+  const handleAddFilter = (filter) => {
+    dispatch(addFilter(filter));
+  };
   return (
     <Wraper>
       <CardImage src={img} alt="book" />
       <CardInfromation>
         <CardGenre>{genre}</CardGenre>
         <CardName>{title}</CardName>
-        <CardAuthor>{authors}</CardAuthor>
+        <CardAuthor onClick={() => handleAddFilter(authors)}>
+          {authors}
+        </CardAuthor>
         <CardPurchase>
           <CardPrice>20$</CardPrice>
           <div>

@@ -13,4 +13,3 @@ export const genres = [
   "Humor",
   "Thriller",
 ];
-export const volume = ["A voluminous book", "Short book"];
